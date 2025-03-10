@@ -19,7 +19,7 @@ async function getDetails(id) {
 }
 
 async function update(id,data) {
-    return await api.put(endpoints.detailsUrl+id,data);
+    return await api.put(endpoints.detailsUrl+id,{...data, _id:id});
 }
 
 async function deleteGame(id) {
