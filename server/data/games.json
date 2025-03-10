@@ -1,0 +1,19 @@
+{
+    "cf0e167c-97a0-4123-bb65-a91fadded686": {
+        "title": "World Of Warcraft",
+        "category": "MMORPG",
+        "maxLevel": "59",
+        "imageUrl": "https://res.cloudinary.com/cook-becker/image/fetch/q_auto:good,f_auto,w_1920/https://candb.com/site/candb/images/artwork/The-Lich-King_world-of-warcraft_1920.jpg",
+        "summary": "BEST MMO RPG GAME EVER",
+        "_id": "cf0e167c-97a0-4123-bb65-a91fadded686"
+    },
+    "ca220e50-9b19-4596-b225-56cd74149eb3": {
+        "title": "Counter Strike 1.6",
+        "category": "FPS",
+        "maxLevel": "1",
+        "imageUrl": "https://images.jacobinmag.com/wp-content/uploads/2022/07/24193231/counterstrike-1.jpeg",
+        "summary": "Best Shooter !",
+        "_id": "ca220e50-9b19-4596-b225-56cd74149eb3"
+    }
+
+}

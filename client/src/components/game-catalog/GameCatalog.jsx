@@ -1,4 +1,6 @@
 export default function GameCatalog() {
+
+    
     return (
         <>
             <section id="catalog-page">
