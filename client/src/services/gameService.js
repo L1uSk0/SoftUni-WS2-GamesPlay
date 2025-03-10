@@ -3,6 +3,7 @@ import { api } from "../utils/requester.js";
 
 const endpoints = {
     "baseUrl": "http://localhost:3030/jsonstore/games",
+    "detailsUrl": "http://localhost:3030/jsonstore/games/"
 }
 
 async function create(data) {
@@ -13,9 +14,9 @@ async function getAll() {
     return await api.get(endpoints.baseUrl);
 }
 
-// async function getDetails(id) {
-//     return await api.get(endpoints.fruitDetails+id);
-// }
+async function getDetails(id) {
+    return await api.get(endpoints.detailsUrl+id);
+}
 
 // async function update(id,data) {
 //     return await api.put(endpoints.fruitDetails+id,data);
@@ -28,7 +29,7 @@ async function getAll() {
 export const dataService = {
     create,
     getAll,
-    // getDetails,
+    getDetails,
     // update,
     // deleteGame,
 }
