@@ -1,22 +1,20 @@
+import {Routes,Route} from 'react-router'
+
 import './App.css'
 import Header from "./components/header/Header.jsx"
 import Home from './components/home/Home.jsx'
 
-
 function App() {
-
-
   return (
     <>
       <div id="box">
         <Header />
-        {/* Main Content */}
+
         <main id="main-content">
-
-        <Home/>
-
+          <Routes>
+            <Route path='/' element={<Home />}/>
+          </Routes>
         </main>
-
       </div>
     </>
   )
