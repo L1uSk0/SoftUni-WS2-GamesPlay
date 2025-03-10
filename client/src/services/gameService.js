@@ -18,19 +18,19 @@ async function getDetails(id) {
     return await api.get(endpoints.detailsUrl+id);
 }
 
-// async function update(id,data) {
-//     return await api.put(endpoints.fruitDetails+id,data);
-// }
+async function update(id,data) {
+    return await api.put(endpoints.detailsUrl+id,data);
+}
 
-// async function deleteGame(id) {
-//     return await api.del(endpoints.fruitDetails+id);
-// }
+async function deleteGame(id) {
+    return await api.del(endpoints.detailsUrl+id);
+}
 
 export const dataService = {
     create,
     getAll,
     getDetails,
-    // update,
-    // deleteGame,
+    update,
+    deleteGame,
 }
 

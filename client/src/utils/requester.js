@@ -7,10 +7,10 @@ async function requester(method, url, data) {
         headers: {}
     }
 
-    // const userToken = userUtil.getToken();
-    // if(userToken){
-    //     option.headers["x-authorization"] = userToken;
-    // }
+    const userToken = userUtil.getToken();
+    if(userToken){
+        option.headers["x-authorization"] = userToken;
+    }
 
     if (data) {
         option.headers["Content-type"] = "application/json"
@@ -45,17 +45,17 @@ async function post(url, data) {
     return requester("POST", url, data);
 }
 
-// async function put(url, data) {
-//     return requester("PUT", url, data);
-// }
+async function put(url, data) {
+    return requester("PUT", url, data);
+}
 
-// async function del(url) {
-//     return requester("DELETE", url);
-// }
+async function del(url) {
+    return requester("DELETE", url);
+}
 
 export const api = {
     get,
     post,
-    // put,
-    // del
+    put,
+    del
 }
