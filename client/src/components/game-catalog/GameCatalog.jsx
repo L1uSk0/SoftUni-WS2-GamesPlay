@@ -1,43 +1,36 @@
-export default function GameCatalog() {
+import { useEffect, useState } from "react";
+import { dataService } from "../../services/gameService.js";
+import GameItem from "./game-catalog-item/GameCatalogItem.jsx";
 
+export default function GameCatalog() {
+    const [games, setGames] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const result = await dataService.getAll();
+                const gamesArray = Object.values(result);
+                setGames(gamesArray);
+            } catch (error) {
+                console.error('Failed to fetch games:', error);
+            }
+        };
+        fetchData();
+    }, []);
     
+
     return (
         <>
             <section id="catalog-page">
                 <h1>All Games</h1>
                 {/* Display div: with information about every game (if any) */}
-                <div className="allGames">
-                    <div className="allGames-info">
-                        <img src="./images/avatar-1.jpg" />
-                        <h6>Action</h6>
-                        <h2>Cover Fire</h2>
-                        <a href="#" className="details-button">
-                            Details
-                        </a>
-                    </div>
-                </div>
-                <div className="allGames">
-                    <div className="allGames-info">
-                        <img src="./images/avatar-1.jpg" />
-                        <h6>Action</h6>
-                        <h2>Zombie lang</h2>
-                        <a href="#" className="details-button">
-                            Details
-                        </a>
-                    </div>
-                </div>
-                <div className="allGames">
-                    <div className="allGames-info">
-                        <img src="./images/avatar-1.jpg" />
-                        <h6>Action</h6>
-                        <h2>MineCraft</h2>
-                        <a href="#" className="details-button">
-                            Details
-                        </a>
-                    </div>
-                </div>
-                {/* Display paragraph: If there is no games  */}
+                {games.length > 0 ? (
+                    games.map(game => <GameItem key={game._id} {...game} />)
+                ):
                 <h3 className="no-articles">No articles yet</h3>
+                }
+
+                {/* Display paragraph: If there is no games  */}
             </section>
         </>
     );
