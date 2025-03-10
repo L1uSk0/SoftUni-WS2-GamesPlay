@@ -61,7 +61,7 @@ export default function GameDetails() {
                     </div>
                     {/* Edit/Delete buttons ( Only for creator of this game )  */}
                     <div className="buttons">
-                        <Link to="#" className="button">
+                        <Link to={`/games/${gameId}/edit`} className="button">
                             Edit
                         </Link>
                         <Link onClick={onDeleteClickHandler} className="button">
